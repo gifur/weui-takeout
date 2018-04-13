@@ -1,0 +1,155 @@
+.scroll-list {
+    overflow: hidden;
+}
+
+.topbar {
+    background: #fff;
+    margin-bottom:2px;
+}
+
+.topbar-item {
+    color: #333;
+    text-align: center;
+    padding: 10px 0;
+}
+.weui-flex__item.active {
+    text-align: center;
+}
+.weui-flex__item.active .topbar-item {
+    color: #f44;
+    display:inline-block;
+    border-bottom:2px solid #f44;
+}
+
+.swiper_box {
+  height: 180px !important;
+}
+
+.weui-media-box {
+  padding:5px 15px;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.weui-media-box__title {
+  font-size: 14px;
+  float: left;
+}
+
+.weui-media-box__hd_in-appmsg {  
+ width: 90px;
+ height: 90px;
+}
+.weui-media-box__row {
+  overflow:hidden;
+  line-height:20px;
+  min-height:20px;
+  margin-bottom:3px;
+  position: relative;
+}
+
+.weui-row_left {
+float: left;
+}
+
+.weui-row_right {
+float: right;
+}
+
+.weui-media-box__title {
+  font-size: 16px;
+  font-weight: 500;
+}
+.weui-media-box__quantity {
+  color:#666 !important;
+}
+
+.weui-media-box__price {
+  color: #f44 !important; 
+  font-size: 14px;
+}
+
+.weui-tag {
+  display:inline-block;
+  position:relative;
+  box-sizing:border-box;
+  line-height:16px;
+  padding:0 5px;
+  border-radius:2px;
+  font-size:11px;
+  background:#c9c9c9;
+  text-align:center;
+  color:#fff;
+}
+
+.weui-capsule {
+  display:inline-block;
+  font-size:12px;
+  vertical-align:middle;
+  line-height:19px;
+  transform:scale(.83);
+}
+
+.weui-capsule__left, .weui-capsule__right {
+  display:inline-block;
+  line-height:17px;
+  height:19px;
+  vertical-align:middle;
+  box-sizing:border-box;
+}
+
+.weui-capsule__left {
+  color:#fff;
+  background:#f24544;
+  border-color:#f24544;
+  padding:2px 3px 6px 3px;
+  border-radius:2px;
+  border:1rpx solid #f24544;
+}
+
+.weui-capsule__right {
+  padding:0 5px;
+  color:#999;
+  border-radius:0 2px 2px 0;
+  border:1rpx solid #999;
+}
+
+
+
+.weui-media-box__location {
+  color:#fff;
+  background:#f85;
+}
+
+.weui-media-box__disc {
+  position: static;
+}
+
+.weui-media-box__remains {
+  margin-top: 4px;
+  color: #333;
+  font-size: 12px;
+}
+
+swiper-item image {
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    height: 180px;
+}
+#today-tab .zan-tab,
+#today-tab .zan-tab__bd, 
+#today-tab .zan-tab__title  {
+  height: 34px !important;
+}
+
+#today-tab .zan-tab__title {
+  height: 34px;
+  line-height: 34px;
+  font-size: 13.5px;
+}
+
+#today-tab .zan-tab__item--selected .zan-tab__title {
+  color: #f44;
+  border-bottom: 0;
+}

@@ -1,0 +1,52 @@
+<import src="/dist/prompt/index.wxml"/>
+
+<template name="list">
+    <template is="prompt" data="{{ prompt }}"/>
+    <!--wx:if="{{ !!goods.paginate.total }}" -->
+     <!-- bindtap="navigateTo"  -->
+	<view class="scroll-list">
+		<view class="weui-panel weui-panel_access" >
+            <view class="weui-panel__bd">
+                <view class="weui-media-box weui-media-box_appmsg"
+                hover-class="weui-cell_active"
+                wx:for="{{ goods.items }}"
+                wx:key="" 
+                data-id="{{ item._id }}">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="{{ item.thumb_url }}" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                    <view class="weui-media-box__row" style='paddin-top:8px;'>
+                     <view class="weui-media-box__title weui-row_left">{{ item.name }}</view>
+                      <view class="weui-media-box__price weui-row_right">¥ {{ item.price }}</view>
+                    </view>
+                    <view class="weui-media-box__row">
+                     <view class="weui-media-box__quantity weui-row_left">{{ item.quantity }}</view>
+                      <view class="weui-tag weui-media-box__location weui-row_right">{{ item.location }}</view>
+                    </view>
+
+                    <view class="weui-media-box__row">
+                    <view class="weui-row_left">
+                    <view class="weui-media-box__desc">
+                      <view class="weui-capsule weui-capsule__left weui-row_left" wx:if="{{item.fresh}}">
+                      新品
+                      </view>
+                    <view class="weui-media-box__remains"> 
+                        <text class="">剩余</text>
+                        <text class="" style='color:#f44!important;'>123</text>
+                        <text class="">份</text>
+                    </view>
+                    </view>
+                    </view>
+                    <view class="weui-row_right" style='padding-top:2px;'>
+                    <navigator url="../goods/detail/index" hover-class="navigator-hover">
+                      <button class="mini-btn" type="warn" size="mini">去预定</button>
+                    </navigator>
+                    </view>
+                    </view>
+                    </view>
+                </view>
+            </view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/classify/index",
+    "pages/cart/index",
+    "pages/order/list/index",
+    "pages/order/confirm/index",
+    "pages/order/detail/index",
+    "pages/order/preset/index",
+    "pages/order/preset1/index",
+    "pages/goods/list/index",
+    "pages/goods/detail/index",
+    "pages/help/list/index",
+    "pages/help/detail/index",
+    "pages/about/index",
+    "pages/login/index",
+    "pages/user/index",
+    "pages/goods/detail1/index",
+    "pages/goods/sell/index",
+    "pages/utils/map/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#CB1F14",
+    "navigationBarTitleText": "卖点",
+    "navigationBarTextStyle": "white",
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#fff"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#D81E06",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "assets/images/home.png",
+        "selectedIconPath": "assets/images/home-full.png",
+        "text": "主页"
+      },
+
+      {
+        "pagePath": "pages/order/preset/index",
+        "iconPath": "assets/images/shop.png",
+        "selectedIconPath": "assets/images/shop-full.png",
+        "text": "领便当"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "iconPath": "assets/images/user.png",
+        "selectedIconPath": "assets/images/user-full.png",
+        "text": "吃货"
+      }
+    ]
+  },
+  "debug": false
+}

@@ -1,0 +1,43 @@
+<import src="../../common/nav.wxml"/>
+<import src="../../common/prompt.wxml"/>
+<import src="/dist/tab/index.wxml" />
+<view class="">
+  <view>
+    <template
+      is="zan-tab"
+      data="{{ ...states, componentId: 'states' }}"></template>
+  </view>
+<template is="prompt" data="{{ prompt }}"/>
+<view class="weui-panel" wx:if="{{ !!order.paginate.total }}" 
+    wx:for="{{ order.items }}" wx:key="" bindtap="navigateTo" data-id="{{ item._id }}">
+  <view class="weui-panel__hd" style='text-align:right;padding:10px 15px 6px;'>
+  <text class="info-meta zan-c-red">待付款</text>
+  </view>
+  <view class="weui-panel__bd">
+    <view class="zan-card" style='font-size:16px;'>
+      <view class="zan-card__thumb">
+        <image class="zan-card__img" src="{{ item.goods.thumb_url }}" mode="aspectFit"></image>
+      </view>
+      <view class="zan-card__detail">
+        <view class="zan-card__detail-row">
+          <view class="zan-card__right-col">¥ {{item.goods.price }}</view>
+          <view class="zan-card__left-col zan-ellipsis--l2">
+            {{ item.goods.name }}
+          </view>
+        </view>
+        <view class="zan-card__detail-row zan-c-gray-darker">
+          <view class="zan-card__right-col">x{{ item.amount}}</view>
+          <view class="zan-card__left-col">
+            {{item.goods.quantity}}
+          </view>
+        </view>
+        <view class="zan-card__detail-row" style="margin-top:24px;">
+           <view class="zan-card__right-col zan-c-gray-dark zan-font-14">2018-02-20</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+ </view>

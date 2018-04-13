@@ -1,0 +1,29 @@
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-article">
+            <view class="weui-article__h2 zan-font-bold">招行卖点--小程序</view>
+            <view class="weui-article__section">
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">1.1 关于项目</view>
+                    <view class="weui-article__p">
+                      招行研发和科兴为所在地的员工提供外卖服务由来已久。由于食堂精心制作的面包、馒头、包子等外购食物广受员工的喜爱，往往赶到现场时被告知已售罄，且排队购买的时间放在了工作时间段。
+                    </view>
+                    <view class="weui-article__p">
+                      为尽量满足有意愿购买的员工都能购买得到自己心仪的外卖，同时减少排队购买的时间，尝试开发并实现专门用于购买招行外卖的小程序。
+                    </view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">1.2 开发相关</view>
+                     <view class="weui-article__h4">前端样式：</view>
+                    <view class="weui-article__p" style="margin-left:15px;">
+                        WeUI, ZanUI, font-awesome
+                    </view>
+                    <view class="weui-article__h4">参考项目：</view>
+                    <view class="weui-article__p" style="margin-left:15px;">
+                        <text class="link">https://github.com/skyvow/m-mall</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

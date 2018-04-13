@@ -1,0 +1,80 @@
+<import src="../../common/prompt.wxml" />
+<import src="/dist/noticebar/index.wxml" />
+<import src="/dist/dialog/index.wxml" />
+<import src="/dist/stepper/index.wxml" />
+<import src="/dist/steps/index.wxml" />
+
+<template is="prompt" data="{{ prompt }}" />
+<view class="weui-panel" wx:if="{{ !!carts.items.length }}" wx:for="{{ carts.items }}" wx:key="" style="margin-top:0;">
+  <view class="weui-panel__hd">
+    <template is="zan-steps" data="{{ type: 'horizon', steps: steps2, className: 'my-class' }}"></template>
+  </view>
+  <view class="weui-panel__hd" style='padding:0 15px 10px;background-color:#F8F8F8;margin-top:40px;'></view>
+  <view class="weui-panel__hd">
+    <text class="info-meta" wx:if="{{ !canEdit }}" data-value="edit" bindtap="onTapEdit">编辑</text>
+    <text class="info-meta" wx:if="{{ canEdit }}" bindtap="onTapEdit">完成</text>
+    <text class="info-meta" wx:if="{{ canEdit }}" style='color:#f44;' bindtap="del" data-id="{{ item._id }}">删除</text>
+  </view>
+  <view class="weui-panel__bd">
+    <view class="zan-card" style='font-size:16px;background-color:#fbfbfb;border:1px solid #f9f9f9;'>
+      <view class="zan-card__thumb">
+        <image class="zan-card__img" src="{{ item.goods.thumb_url }}" mode="aspectFit"></image>
+      </view>
+      <view class="zan-card__detail">
+        <view class="zan-card__detail-row">
+          <view class="zan-card__right-col">¥ {{item.goods.price }}</view>
+          <view class="zan-card__left-col zan-ellipsis--l2">
+            {{ item.goods.name }}
+          </view>
+        </view>
+        <view class="zan-card__detail-row zan-c-gray-darker">
+          <view class="zan-card__right-col">x{{ item.amount}}</view>
+          <view class="zan-card__left-col">
+            {{item.goods.quantity}}
+          </view>
+        </view>
+        <view class="zan-card__detail-row" style="margin-top:18px;">
+          <view class="zan-card__left-col" wx:if="{{ canEdit }}">
+            <template is="zan-stepper" data="{{ ...stepper3, componentId: 'stepper3', size: 'small' }}" />
+          </view>
+          <view class="zan-card__right-col zan-c-red zan-font-18" style='padding-top:6px;'  wx:if="{{!canEdit }}">
+          ¥ {{carts.totalPrice }}</view>
+          <view class="zan-card__left-col zan-c-red" style='padding-top:6px;' wx:if="{{!canEdit }}">待支付</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-panel__hd" style='padding:0 15px 10px;'></view>
+</view>
+<view class="weui-panel">
+  <view class="weui-cells__title">扫码结果</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <textarea bindblur="bindTextAreaBlur" auto-height value="{{scan_result}}"/>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="zan-panel twui-btn-bottom-fixed" wx:if="{{ !!carts.items.length }}">
+<template is="zan-noticebar" data="{{ ...notice, componentId: 'notice'  }}"></template>
+  <view class="zan-row">
+    <view class="zan-col zan-col-16" wx:if="{{ !canEdit }}">
+    <view class="zan-cell twui-cell-left">
+      <view class="zan-cell__bd" style="padding-top:8px;">
+      <view class="zan-cell__desc" wx:if="{{false}}">距离开售剩余(分钟)：</view>
+      <view class="zan-cell__desc" wx:elif="{{true}}">外卖结束剩余(分钟)：</view>
+        <view class="zan-cell__text">14:59</view>
+      </view>
+      <!-- <view class="zan-cell__ft zan-c-red zan-font-18" style="padding-top:8px;">¥ {{carts.totalPrice }}</view> -->
+    </view>
+    </view>
+    <view class="zan-col zan-col-12" wx:if="{{ canEdit }}">
+      <button class="zan-btn zan-btn--large zan-btn--primary" bindtap="clear">取消预定</button>
+    </view>
+    <view class="zan-col {{!canEdit ? 'zan-col-8' : ' zan-col-12'}}">
+      <button class="zan-btn zan-btn--large zan-btn--danger" bindtap="scanCode">扫码签收</button>
+    </view>
+  </view>
+</view>
+<template is="zan-dialog" data="{{ zanDialog }}"></template>

@@ -1,0 +1,7 @@
+<!--pages/map/map.wxml-->
+<view class="container">
+<map id="curMap" style="width: {{mapWidth}}; height: {{mapHeight}}; top:{{mapTop}}"
+ latitude='{{latitude}}' longitude='{{longitude}}'
+ markers='{{markers}}' bindmarkertap="markertap" scale="{{mapScale}}" show-location bindregionchange="regionChanged" controls="{{controls}}" bindcontroltap="controltap">
+</map>
+</view>

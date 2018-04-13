@@ -1,0 +1,57 @@
+<!--pages/goods/sell/index.wxml-->
+<import src="/dist/field/index.wxml" />
+<import src="/dist/switch/index.wxml" />
+
+<view class="container">
+  <view class="doc-title zan-hairline--bottom">外购发布</view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="zan-panel-title">基本信息</view>
+  <view class="zan-panel">
+    <template
+      is="zan-field"
+      data="{{ ...config.base.name }}"></template>
+    <template
+      is="zan-field"
+      data="{{ ...config.base.time }}"></template>
+    <template
+      is="zan-field"
+      data="{{ ...config.base.address }}"></template>
+  </view>
+
+  <view class="zan-panel-title field__title--radius">商品规格</view>
+  <template
+    is="zan-field"
+    data="{{ ...config.radius.price }}"></template>
+  <template
+    is="zan-field"
+    data="{{ ...config.radius.quantity }}"></template>
+  <template
+    is="zan-field"
+    data="{{ ...config.radius.amount }}"></template>
+
+<view class="zan-panel-title">其他说明</view>
+  <view class="zan-panel">
+    <view class="zan-cell zan-cell--switch">
+      <view class="zan-cell__bd">是否限购</view>
+      <view class="zan-cell__ft">
+        <template is="zan-switch" data="{{ ...isLimited, componentId: 'isLimited' }}"/>
+      </view>
+    </view>
+  </view>
+  <view class="zan-panel">
+    <view class="zan-cell zan-cell--switch">
+      <view class="zan-cell__bd">是否新品</view>
+      <view class="zan-cell__ft">
+        <template is="zan-switch" data="{{ ...isFresh, componentId: 'isFresh' }}"/>
+      </view>
+    </view>
+  </view>
+  <view class="zan-panel-title"> </view>
+  <view class="zan-btns">
+  <button class="zan-btn zan-btn--danger" formType="submit">确认发布</button>
+  <button class="zan-btn zan-btn--primary" formType="reset">取消</button>
+  </view>
+
+</form>
+</view>
+

@@ -1,0 +1,10 @@
+
+.weui-cell:before,
+.weui-cell::after {
+  border-bottom: 0rpx solid #D9D9D9 !important;
+  border-top: 0rpx solid #D9D9D9 !important;
+}
+
+.weui-panel:first-child {
+  margin-top: 10px;
+}

@@ -1,0 +1,24 @@
+<import src="/dist/tab/index.wxml" />
+<import src="/dist/list/index.wxml" />
+
+  <view>
+    <template
+      is="zan-tab"
+      data="{{ ...weeks, componentId: 'weeks' }}"></template>
+  </view>
+  <view id='today-tab'>
+    <template
+      is="zan-tab"
+      data="{{ ...todays, componentId: 'todays' }}"></template>
+  </view>
+
+<swiper class="swiper_box" indicator-dots="{{ indicatorDots }}" autoplay="{{ autoplay }}" current="{{ current }}" interval="{{ interval }}" duration="{{ duration }}" circular="{{ circular }}" bindchange="swiperchange">
+    <block wx:for="{{ images }}" wx:key="">
+        <swiper-item>
+            <image src="{{ item.path }}" class="slide-image"/>
+        </swiper-item>
+    </block>
+</swiper>
+
+
+<template is="list" data="{{ goods, prompt }}"/>
